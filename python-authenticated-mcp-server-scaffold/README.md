@@ -36,6 +36,11 @@ pip install -r requirements.txt
 
 > The scaffold expects OAuth 2.1 bearer tokens issued by Auth0. Substitute your own IdP if you prefer, but keep the same environment variable names.
 
+Auth0 enables MCP clients to securely connect to MCP servers by providing metadata discovery, CIMD registration, API security, and token exchange for first and third-party tool calls. To learn more, read:
+- [Guide to configuring Auth0 for MCP authorization](https://github.com/openai/openai-mcpkit/blob/main/python-authenticated-mcp-server-scaffold/README.md#2-configure-auth0-authentication)
+- [Auth0 securing MCP servers overview](https://auth0.com/ai/docs/mcp/intro/overview)
+- [Auth0 securing MCP servers quickstarts](https://auth0.com/ai/docs/mcp/get-started/overview)
+
 1. **Create an API**  
    - Auth0 Dashboard → *Applications* → *APIs* → *Create API*  
    - Name it (e.g., `mcp-python-server`)  
