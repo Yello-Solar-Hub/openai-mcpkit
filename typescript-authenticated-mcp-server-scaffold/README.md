@@ -90,9 +90,27 @@ To create a default third-party grant using the Auth0 Dashboard:
 5. Select **Save**. 
 
 5. **Add a social connection to the tenant** for example Google oauth2 to provide a social login mechanism for users.
-   - Authentication > Social > google-oauth2 > Advanced > Promote Connection to Domain Level
+   - Navigate to **Authentication** > **Social** > google-oauth2 > **Advanced** > **Promote Connection to Domain Level**
 
-6. **Update your environment variables**  
+6. Create a test user
+
+Create a simple username/password login for a test user. You can use any Auth0-supported authentication method configured on your tenant.
+
+1. Navigate to **User Management** > **Users** and select **Create User**. 
+2. In the modal, provide an email and a password for the user. It can be any email/password combination you would like to test with.
+
+7. Create roles to define permissions and scopes for test user
+
+Create roles and assign permissions to them. This allows you to control which users can access which tools using the core Auth0 RBAC features.
+
+1. Navigate to **User Management** > **Roles** and select **Create Role**. Create the **Tool Administrator** role.
+2. Assign the `tool:search`, `tool:fetch`, and `tool:airfare_trend_insights` API permissions to your **Tool Administrator** role. 
+3. Navigate to **Permissions** tab and select **Add Permissions**. 
+4. Select the API you created in step 1 and add the permissions.
+
+Lastly, assign the **Tool Administrator** role to your test user. Navigate to the **Users** tab and assign the user this role.
+
+7. **Update your environment variables**  
    - `AUTH0_ISSUER`:  your tenant domain (e.g., `https://dev-your-tenant.us.auth0.com/`)
    - `JWT_AUDIENCES`: API identifier created in step 1 (e.g. `https://your-domain.example.com/mcp`)
 
